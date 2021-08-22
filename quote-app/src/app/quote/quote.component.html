@@ -3,6 +3,6 @@
   <h1>Quotes Hub</h1>
 <li *ngFor='let quote of quotes'>
   {{quote.message}}
-
+  <app-quote-detail [quotes]='quote'></app-quote-detail>
 </li>
 </div>
