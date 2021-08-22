@@ -16,7 +16,10 @@ export class QuoteComponent implements OnInit {
     new Quote(5,'James Cameron','If you set your goals ridiculously high and it is a failure, you will fail above everyone else success.','Jolly',new Date(2020,5,3)),
     new Quote(6,'Maya Angelou','You will face many defeats in life, but never let yourself be defeated. ','Andrea',new Date(2021,7,4))
 
-  ]
+  ];
+  toggleDisplay(index:number){
+    this.quotes[index].displayDescription = !this.quotes[index].displayDescription;
+  }
 
   constructor() { }
 

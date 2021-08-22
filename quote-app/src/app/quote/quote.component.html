@@ -1,8 +1,25 @@
-
-<div>
+<div class = "container">
   <h1>Quotes Hub</h1>
-<li *ngFor='let quote of quotes'>
-  {{quote.message}}
-  <app-quote-detail [quotes]='quote'></app-quote-detail>
-</li>
+  <hr>
+  <div class = "row">
+    <div class ="col-md-12">
+      <p>Welcome to Quotes Hub, the free avenue to post famous quotes from liberalists to mathematicians</p>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-6">
+      <div *ngFor='let quote of quotes; let i = index'>
+        <div>
+          <h5>{{quote.message}}</h5>
+          <button (click)='toggleDisplay(i)'class="btn btn-secondary">Quote details</button>
+        </div>
+        <div *ngIf='quote.displayDescription'>
+          <app-quote-detail [quotes]='quote'></app-quote-detail>
+        </div>
+      </div>
+    </div>
+    <div class = "col-md-12">
+      <app-quote-form></app-quote-form>
+    </div>
+  </div>
 </div>
