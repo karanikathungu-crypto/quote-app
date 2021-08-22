@@ -1,23 +1,30 @@
 <div class="container-fluid">
   <h2 class="text-center">Upload a quote</h2>
   <hr>
-  <form>
+  <form #quoteForm = 'ngForm'>
       <div class="form-group">
 
-          <label for="author">Author</label>
-          <input type="text" required class="form-control" id="author">
-
+          <label for="author">Author name</label>
+          <input type="text" class="form-control" id="author" [(ngModel)]="userQuote.author" name="author" #author="ngModel" required>
+          <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+            <p>Author name is required</p>
+          </div>
       </div>
-      <div class="form-group">
-
+      <div class = "form-group">
           <label for="quote">Quote</label>
-          <textarea class="form-control" id="quote" rows="6" required></textarea>
-
+          <textarea class="form-control" id="quote" rows="6" [(ngModel)]="userQuote.message" name="quote" #message="ngModel" required></textarea>
+          <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
+            <p>Quote is required</p>
+          </div>
       </div>
       <div class="form-group">
           <label for="complete">Uploader</label>
-          <input type='text' id="uploader" required>
+          <input type='text' id="uploader" [(ngModel)]="userQuote.poster" name="uploader" #poster="ngModel" required>
+          <div [hidden]="poster.valid || poster.pristine" class="alert alert-danger">
+            <p>Your name is required</p>
+          </div>
 
       </div>
+      <button type = "submit" class= "btn-btn-success">Post Quote</button>
   </form>
 </div>
