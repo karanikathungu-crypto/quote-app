@@ -17,6 +17,17 @@ export class QuoteComponent implements OnInit {
     new Quote(6,'Maya Angelou','You will face many defeats in life, but never let yourself be defeated. ','Andrea',new Date(2021,7,4))
 
   ];
+  quoteIncorrect(isIncorrect:Boolean, index:number){
+    if (isIncorrect){
+      this.quotes.splice(index,1);
+    }
+  }
+  addNewQuote(quote:any){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    quote.elapsedTime = new Date(quote.elapsedTime)
+    this.quotes.push(quote)
+  }
   toggleDisplay(index:number){
     this.quotes[index].displayDescription = !this.quotes[index].displayDescription;
   }

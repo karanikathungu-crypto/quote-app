@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
 
 @Component({
@@ -7,10 +7,15 @@ import { Quote } from '../quote';
   styleUrls: ['./quote-detail.component.css']
 })
 export class QuoteDetailComponent implements OnInit {
-@Input () quotes:any;
-  constructor() { }
+  @Input () quotes:any;
+  @Output () isIncorrect = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
+  quoteIncorrect(incorrect:boolean){
+    this.isIncorrect.emit(incorrect)
   }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
 
 }
