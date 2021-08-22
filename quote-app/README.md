@@ -1,6 +1,18 @@
 # QuoteApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+## Author
+Kenneth Kathungu
+
+## Project Description
+This is an angular application which allows a user to post famous quotes and view posted quotes while voting on them, it also allows user to delete the quote they have posted. The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1. The project requires installation of vs code or any text editor after which one can fork and clone the repository to their local space and run it using the text editor and a web browser of choice.
+
+## Languages used
+The project utilized typescript programming langauge, custom stylesheets and Bootstrap for styling and HTML as the markup language.
+
+### Link to the project view
+
+### License used
+MIT license
 
 ## Development server
 
