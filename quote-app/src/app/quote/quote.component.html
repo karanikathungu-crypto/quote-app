@@ -11,7 +11,7 @@
       <h3>Quotes</h3>
       <div *ngFor='let quote of quotes; let i = index'>
         <div>
-          <h5>{{quote.message}} <br><span class="time" >Posted on {{quote.elapsedTime}}</span></h5>
+          <h5>{{quote.message}} <br><span class="time" >Posted on {{quote.elapsedTime|date}}</span></h5>
           <button (click)='toggleDisplay(i)'class="btn btn-secondary">Quote details</button>
         </div>
         <div *ngIf='quote.displayDescription'>
